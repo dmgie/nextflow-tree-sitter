@@ -24,26 +24,40 @@ module.exports = grammar({
         string: $ => token(prec(PREC.STRING, /["']([^["']\\]|\\.)*["']/)),
         // string: $ => token(prec(PREC.STRING, /"([^"\\]|\\.)*"/)),
         number: $ => token(prec(PREC.NUMBER, /\d+(\.\d+)?/)),
-        variable: $ => seq($.identifier, optional(repeat(seq(".", $.identifier)))),
         identifier: $ => /[a-zA-Z_]\w*/,
         _line_terminator: $ => ";",
 
+        _expression: $ => choice(
+            $.string,
+            $.number,
+            $.identifier,
+            $.function_call,
+        ),
+
 
         // function
-        function_call: $ => seq(
-            choice($.identifier, $.member_access), $.parameter_list),
-        parameter: $ => seq(field("name", $.identifier)),
-        parameter_list: $ => seq("(", optional(comma_sep($.parameter)), ")"),
+        function_call: $ => prec(1,seq(
+            field("name", seq($.identifier)),
+            $.parameter_list,
+        )),
+        parameter_list: $ => seq("(", optional(comma_sep(
+            choice($.named_parameter, $.identifier)
+        )), ")"),
+        named_parameter: $ => seq(
+            field("name", $.identifier), ":", field("value", $._expression)),
+        member_access: $ => seq(
+            choice($.function_call, $.identifier),
+            repeat(seq(".", choice($.function_call, $.identifier)))),
 
-        member_access: $ => seq($.identifier, repeat(seq(".", $.identifier))),
         block: $ => seq("{", repeat($._statement), "}"),
 
 
         // Statements =  any complete unit of code that performs an action or a sequence of actions
-        _statement: $ => choice(
+        _statement: $ => prec(1,choice(
             $.function_call,
+            $.member_access,
             // TODO more statements i.e if, for, while, assignment, etc
-        ),
+        )),
 
         operator: $ => choice($._comparison_operator, $._arithmatic_operator, $._logical_operator),
         _comparison_operator: $ => choice("==", "!=", "<", ">", "<=", ">="),

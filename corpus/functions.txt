@@ -26,16 +26,16 @@ function_name().member_name
 
 
 ====================
-function call of member access
+function call of member 
 ====================
 function_name.member_name()
 -----------------
 (source_file
- (function_call
-  (member_access
+ (member_access
+  (identifier)
+  (function_call
    (identifier)
-   (identifier))
-  (parameter_list)))
+   (parameter_list))))
 
 =============================
 function call with parameters
@@ -60,7 +60,7 @@ function_name(parameter1, parameter2, parameter3)
 function call with named parameters
 =============================
 
-function_name(a: parameter1, b: parameter2)
+function_name(a: 5, b: parameter2)
 
 -----------------
 
@@ -68,6 +68,5 @@ function_name(a: parameter1, b: parameter2)
  (function_call
   (identifier)
   (parameter_list
-    (parameter (identifier))
-    (parameter (identifier))
-    (parameter (identifier)))))
+   (named_parameter (identifier) (number))
+   (named_parameter (identifier) (identifier)))))
