@@ -1,51 +1,5 @@
 [
   {
-    "type": "assignment",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "function_call",
     "named": true,
     "fields": {},
@@ -54,7 +8,7 @@
       "required": true,
       "types": [
         {
-          "type": "function_name",
+          "type": "identifier",
           "named": true
         },
         {
@@ -65,71 +19,19 @@
     }
   },
   {
-    "type": "input_declaration",
+    "type": "parameter",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "io_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "io_item",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "io_type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "io_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "standard_io_type",
-          "named": true
-        },
-        {
-          "type": "tuple_io_type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "output_declaration",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "io_item",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -138,90 +40,10 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "process",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "process_level_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "process_item",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "input_declaration",
-          "named": true
-        },
-        {
-          "type": "output_declaration",
-          "named": true
-        },
-        {
-          "type": "script_declaration",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "process_level_item",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "process_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "script_declaration",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "triple_quoted_string",
+          "type": "parameter",
           "named": true
         }
       ]
@@ -240,149 +62,19 @@
           "named": true
         },
         {
-          "type": "process",
-          "named": true
-        },
-        {
-          "type": "workflow",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "standard_io_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "triple_quoted_string",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "tuple_io_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "standard_io_type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "wf_emit",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "wf_main",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
           "type": "function_call",
           "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
         }
       ]
     }
   },
   {
-    "type": "wf_take",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
+    "type": "!=",
+    "named": false
   },
   {
-    "type": "workflow",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "workflow_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "workflow_item",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "wf_emit",
-          "named": true
-        },
-        {
-          "type": "wf_main",
-          "named": true
-        },
-        {
-          "type": "wf_take",
-          "named": true
-        }
-      ]
-    }
+    "type": "&&",
+    "named": false
   },
   {
     "type": "(",
@@ -393,15 +85,47 @@
     "named": false
   },
   {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
   {
-    "type": ":",
+    "type": "-",
     "named": false
   },
   {
-    "type": "=",
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
     "named": false
   },
   {
@@ -409,79 +133,15 @@
     "named": true
   },
   {
-    "type": "def",
-    "named": false
-  },
-  {
-    "type": "emit",
-    "named": false
-  },
-  {
-    "type": "env",
-    "named": false
-  },
-  {
-    "type": "function_name",
-    "named": true
-  },
-  {
     "type": "identifier",
     "named": true
   },
   {
-    "type": "input",
-    "named": false
-  },
-  {
-    "type": "main",
-    "named": false
-  },
-  {
-    "type": "number",
-    "named": true
-  },
-  {
-    "type": "output",
-    "named": false
-  },
-  {
-    "type": "path",
-    "named": false
-  },
-  {
-    "type": "process",
-    "named": false
-  },
-  {
-    "type": "script:",
-    "named": false
-  },
-  {
-    "type": "stdin",
-    "named": false
-  },
-  {
-    "type": "string",
-    "named": true
-  },
-  {
-    "type": "take",
-    "named": false
-  },
-  {
-    "type": "tuple",
-    "named": false
-  },
-  {
-    "type": "val",
-    "named": false
-  },
-  {
-    "type": "workflow",
-    "named": false
-  },
-  {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {

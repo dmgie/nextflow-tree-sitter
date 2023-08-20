@@ -1,0 +1,73 @@
+====================
+simple function call
+====================
+
+function_name()
+
+-----------------
+
+(source_file
+ (function_call
+  (identifier)
+  (parameter_list)))
+
+
+====================
+function with member access
+====================
+function_name().member_name
+-----------------
+(source_file
+ (member_access
+  (function_call
+   (identifier)
+   (parameter_list))
+  (identifier)))
+
+
+====================
+function call of member access
+====================
+function_name.member_name()
+-----------------
+(source_file
+ (function_call
+  (member_access
+   (identifier)
+   (identifier))
+  (parameter_list)))
+
+=============================
+function call with parameters
+=============================
+
+function_name(parameter1, parameter2, parameter3)
+
+-----------------
+
+(source_file
+ (function_call
+  (identifier)
+  (parameter_list
+    (identifier)
+    (identifier)
+    (identifier))))
+
+
+
+
+=============================
+function call with named parameters
+=============================
+
+function_name(a: parameter1, b: parameter2)
+
+-----------------
+
+(source_file
+ (function_call
+  (identifier)
+  (parameter_list
+    (parameter (identifier))
+    (parameter (identifier))
+    (parameter (identifier)))))

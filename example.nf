@@ -30,14 +30,3 @@ process processExample {
     """
 }
 
-//
-// workflow exampleWorkflow {
-//   take:
-//     name
-//     anothername
-//   main:
-//     wow = processExample(name, anothername)
-//   emit:
-//     emiting
-// }
-//

@@ -1,0 +1,67 @@
+=================
+if statement
+=================
+
+if (condition) {
+    // code
+}
+
+-----------------
+
+(source_file
+ (if_definition
+  (parameter_list
+   (parameter (variable)))
+  (block
+    (comment)))
+
+
+
+=================
+if else statement
+=================
+
+if (condition) {
+    // code
+} else {
+    // code
+}
+
+-----------------
+
+(source_file
+ (if_definition
+  (parameter_list
+   (parameter (variable)))
+  (block
+    (comment))
+  (else_definition
+    (block
+      (comment)))))
+
+
+=================
+if else if statement
+=================
+
+if (condition) {
+    // code
+} else if (condition2) {
+    // code
+}
+
+-----------------
+
+(source_file
+ (if_definition
+  (parameter_list
+   (parameter (variable)))
+  (block
+    (comment))
+  (else_if_definition
+    (parameter_list
+     (parameter (variable)))
+    (block
+      (comment)))))
+
+
