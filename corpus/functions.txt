@@ -18,11 +18,10 @@ function with member access
 function_name().member_name
 -----------------
 (source_file
- (member_access
-  (function_call
-   (identifier)
-   (parameter_list))
-  (identifier)))
+ (function_call
+  (identifier)
+  (parameter_list))
+ (identifier)))
 
 
 ====================

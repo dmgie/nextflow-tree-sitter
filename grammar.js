@@ -2,9 +2,9 @@ const PREC = {
     COMMENT: 1,
     STRING: 2,
     NUMBER: 3,
-    KEYWORD: 4,
-    VARIABLE: 5,
-    IDENTIFIER: 6,
+    FUNCTION_CALL: 4,
+    IDENTIFIER: 5,
+    STATEMENT: 6, // Units of code (func_call()) should be given precedence over i.e member access (func_call().member)
 };
 
 module.exports = grammar({
@@ -46,14 +46,15 @@ module.exports = grammar({
         named_parameter: $ => seq(
             field("name", $.identifier), ":", field("value", $._expression)),
         member_access: $ => seq(
-            choice($.function_call, $.identifier),
-            repeat(seq(".", choice($.function_call, $.identifier)))),
+            field("object", $._member_value),
+            field("member", repeat(seq(".", $._member_value)))), // Repeat to allow for nested members
+        _member_value: $ => seq($.identifier), // Only identifier+function_call can have members?
 
         block: $ => seq("{", repeat($._statement), "}"),
 
 
         // Statements =  any complete unit of code that performs an action or a sequence of actions
-        _statement: $ => prec(1,choice(
+        _statement: $ => prec(PREC.STATEMENT,choice(
             $.function_call,
             $.member_access,
             // TODO more statements i.e if, for, while, assignment, etc
@@ -65,6 +66,17 @@ module.exports = grammar({
         _logical_operator: $ => choice("&&", "||"),
         
 
+        if_definition: $ => seq(
+            "if",
+            "(", field("condition", $._expression), ")",
+            field("body", $.block),
+            optional(seq("else if", field("condition", $._expression), field("body", $.block))),
+            optional(seq("else", field("body", $.block))),
+        ),
+        _condition: $ => seq(
+            field("left", $._expression),
+            optional(seq(field("operator", $.operator), field("right", $._expression))),
+        ),
 }})
 
 
