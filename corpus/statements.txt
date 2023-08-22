@@ -1,17 +1,135 @@
-=================
-if statement
-=================
-
+==================
+if statement (identifier)
+==================
 if (condition) {
     // code
 }
-
 -----------------
-
 (source_file
  (if_definition
-   (
-  (block
-    (comment)))
+    (identifier)
+    (block
+        (comment))))
 
 
+
+==================
+if statement (comparison)
+==================
+if (2 > 1) {
+    // code
+}
+-----------------
+(source_file
+ (if_definition
+    (number)
+    (operator)
+    (number)
+    (block
+        (comment))))
+
+
+==================
+if statement (nested)
+==================
+if ((2 == 1)) {
+    // code
+}
+-----------------
+(source_file
+ (if_definition
+    (number)
+    (operator)
+    (number)
+    (block
+        (comment))))
+
+==================
+if statement (nested multiple)
+==================
+if ((2 == 1) && (3 == 1)) {
+    // code
+}
+-----------------
+(source_file
+ (if_definition
+    (number)
+    (operator)
+    (number)
+    (operator)
+    (number)
+    (operator)
+    (number)
+    (block
+        (comment))))
+
+
+==================
+function definition
+==================
+def function_name() {
+    // code
+}
+-----------------
+(source_file
+ (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+        (comment))))
+
+
+
+==================
+function definition with params
+==================
+def function_name(a, b) {
+    // code
+}
+-----------------
+(source_file
+ (function_definition
+    (identifier)
+    (parameter_list
+        (identifier)
+        (identifier))
+    (block
+        (comment))))
+
+==================
+assignment
+==================
+a = 1
+-----------------
+(source_file
+ (assignment
+    (identifier)
+    (number)))
+
+
+
+==================
+assignment from function
+==================
+a = Call()
+-----------------
+(source_file
+ (assignment
+    (identifier)
+    (function_call
+        (identifier)
+        (parameter_list))))
+
+
+==================
+assignment from function member
+==================
+a = Call().out
+-----------------
+(source_file
+ (assignment
+    (identifier)
+    (function_call
+        (identifier)
+        (parameter_list))
+    (identifier)))

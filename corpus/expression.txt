@@ -1,0 +1,164 @@
+===============
+addition
+===============
+a + 1
+-----------------
+(source_file
+    (identifier)
+    (operator)
+    (number))
+
+
+===============
+subtraction
+===============
+a - 1
+-----------------
+(source_file
+    (identifier)
+    (operator)
+    (number))
+
+===============
+grouped expression
+===============
+(a)
+-----------------
+(source_file
+    (identifier))
+
+===============
+grouped expression addition
+===============
+(a + 1)
+-----------------
+(source_file
+    (identifier)
+    (operator)
+    (number))
+
+
+===============
+double grouped expression addition
+===============
+(a + (a + 1))
+-----------------
+(source_file
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (number))
+
+===============
+function call expr
+===============
+call()
+-----------------
+(source_file
+    (function_call
+        (identifier)
+        (parameter_list)))
+
+===============
+function call param
+===============
+call(a)
+-----------------
+(source_file
+    (function_call
+        (identifier)
+        (parameter_list
+            (identifier))))
+
+===============
+member function call
+===============
+call.member()
+-----------------
+(source_file
+    (identifier)
+    (function_call
+        (identifier)
+        (parameter_list)))
+
+===============
+nested member function call
+===============
+call.member.another()
+-----------------
+(source_file
+    (identifier)
+    (identifier)
+    (function_call
+        (identifier)
+        (parameter_list)))
+
+
+===============
+member of function call
+===============
+another().something
+-----------------
+(source_file
+    (function_call
+        (identifier)
+        (parameter_list))
+    (identifier))
+
+===============
+list
+===============
+[a, b]
+---
+(source_file
+    (list
+        (identifier)
+        (identifier)))
+
+===============
+list with values
+===============
+[1, 2]
+---
+(source_file
+    (list
+        (number)
+        (number)))
+
+
+===============
+comparison
+===============
+1 == 2
+---
+(source_file
+    (number)
+    (operator)
+    (number))
+
+
+===============
+comparison grouped
+===============
+(1 == 2)
+---
+(source_file
+    (number)
+    (operator)
+    (number))
+
+
+===============
+comparison multiple
+===============
+(1 == 2 && 2 == 2)
+---
+(source_file
+    (number)
+    (operator)
+    (number)
+    (operator)
+    (number)
+    (operator)
+    (number))

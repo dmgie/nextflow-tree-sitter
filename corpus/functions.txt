@@ -21,20 +21,7 @@ function_name().member_name
  (function_call
   (identifier)
   (parameter_list))
- (identifier)))
-
-
-====================
-function call of member 
-====================
-function_name.member_name()
------------------
-(source_file
- (member_access
-  (identifier)
-  (function_call
-   (identifier)
-   (parameter_list))))
+ (identifier))
 
 =============================
 function call with parameters

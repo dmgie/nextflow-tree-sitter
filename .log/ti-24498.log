@@ -1,0 +1,43 @@
+[22:31:37.059] Global cache location '/home/archbox/.cache/typescript/4.7', safe file path '/home/archbox/.local/lib/node_modules/typescript/lib/typingSafeList.json', types map path /home/archbox/.local/lib/node_modules/typescript/lib/typesMap.json
+[22:31:37.060] Processing cache location '/home/archbox/.cache/typescript/4.7'
+[22:31:37.060] Trying to find '/home/archbox/.cache/typescript/4.7/package.json'...
+[22:31:37.060] Loaded content of '/home/archbox/.cache/typescript/4.7/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.657"}}
+[22:31:37.060] Loaded content of '/home/archbox/.cache/typescript/4.7/package-lock.json'
+[22:31:37.060] Finished processing cache location '/home/archbox/.cache/typescript/4.7'
+[22:31:37.061] Process id: 24510
+[22:31:37.061] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[22:31:37.061] validateDefaultNpmLocation: false
+[22:31:37.061] Npm config file: /home/archbox/.cache/typescript/4.7/package.json
+[22:31:37.061] Updating types-registry npm package...
+[22:31:37.061] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[22:31:37.809]     Succeeded. stdout:
+    
+    up to date, audited 2 packages in 580ms
+
+found 0 vulnerabilities
+
+[22:31:37.809] Updated types-registry npm package
+[22:31:37.833] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/home/archbox/.local/lib/node_modules/typescript/lib/lib.es5.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2016.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.dom.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/home/archbox/.local/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/archbox/Projects/nextflow-tree-sitter/grammar.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/archbox/Projects/nextflow-tree-sitter","kind":"discover"}
+[22:31:37.847] Loaded safelist from types map file '/home/archbox/.local/lib/node_modules/typescript/lib/typesMap.json'
+[22:31:37.848] Explicitly included types: []
+[22:31:37.849] Typing names in '/home/archbox/Projects/nextflow-tree-sitter/package.json' dependencies: ["nan","tree-sitter-cli"]
+[22:31:37.849] Searching for typing names in /home/archbox/Projects/nextflow-tree-sitter/node_modules; all files: ["/home/archbox/Projects/nextflow-tree-sitter/node_modules/nan/package.json","/home/archbox/Projects/nextflow-tree-sitter/node_modules/tree-sitter-cli/package.json"]
+[22:31:37.850]     Found package names: ["nan","tree-sitter-cli"]
+[22:31:37.850] Inferred typings from unresolved imports: []
+[22:31:37.850] Result: {"cachedTypingPaths":[],"newTypingNames":["nan","tree-sitter-cli"],"filesToWatch":["/home/archbox/Projects/nextflow-tree-sitter/bower_components","/home/archbox/Projects/nextflow-tree-sitter/package.json","/home/archbox/Projects/nextflow-tree-sitter/node_modules"]}
+[22:31:37.850] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":["nan","tree-sitter-cli"],"filesToWatch":["/home/archbox/Projects/nextflow-tree-sitter/bower_components","/home/archbox/Projects/nextflow-tree-sitter/package.json","/home/archbox/Projects/nextflow-tree-sitter/node_modules"]}
+[22:31:37.850] DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/bower_components
+[22:31:37.850] DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[22:31:37.851] Elapsed:: 0.7427900023758411ms DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[22:31:37.851] FileWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/package.json
+[22:31:37.851] FileWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/package.json 2000 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[22:31:37.851] DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/node_modules
+[22:31:37.851] DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[22:31:37.853] Elapsed:: 1.2098800018429756ms DirectoryWatcher:: Added:: WatchInfo: /home/archbox/Projects/nextflow-tree-sitter/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[22:31:37.853] Installing typings ["nan","tree-sitter-cli"]
+[22:31:37.853] 'nan':: Entry for package 'nan' does not exist in local types registry - skipping...
+[22:31:37.853] 'tree-sitter-cli':: Entry for package 'tree-sitter-cli' does not exist in local types registry - skipping...
+[22:31:37.853] All typings are known to be missing or invalid - no need to install more typings
+[22:31:37.853] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[22:31:37.853] Response has been sent.
